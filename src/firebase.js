@@ -2,16 +2,26 @@ import * as firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 
-// firebase init
+// // firebase init
+// const firebaseConfig = {
+//   apiKey: '',
+//   authDomain: '',
+//   databaseURL: '',
+//   projectId: '',
+//   storageBucket: '',
+//   messagingSenderId: '',
+//   appId: ''
+// }
+
 const firebaseConfig = {
-  apiKey: '',
-  authDomain: '',
-  databaseURL: '',
-  projectId: '',
-  storageBucket: '',
-  messagingSenderId: '',
-  appId: ''
-}
+  databaseURL: 'https://suara-tepmyid-default-rtdb.firebaseio.com/',
+  apiKey: "AIzaSyBLfyifBSXi2_wpApU3iAOED_nl3teFOfs",
+  authDomain: "suara-tepmyid.firebaseapp.com",
+  projectId: "suara-tepmyid",
+  storageBucket: "suara-tepmyid.appspot.com",
+  messagingSenderId: "36540071333",
+  appId: "1:36540071333:web:f2e26e7f3954cfc1837c4c"
+};
 firebase.initializeApp(firebaseConfig)
 
 // utils
