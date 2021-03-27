@@ -9,7 +9,7 @@
           <h5>{{ userProfile.name }}</h5>
           <p>{{ userProfile.title }}</p>
           <div class="create-post">
-            <p>create a post</p>
+            <p>Sampaikan aspirasi/laporan</p>
             <form @submit.prevent>
               <textarea v-model.trim="post.content"></textarea>
               <button @click="createPost()" :disabled="post.content === ''" class="button">post</button>
@@ -24,14 +24,14 @@
             <span>{{ post.createdOn | formatDate }}</span>
             <p>{{ post.content | trimLength }}</p>
             <ul>
-              <li><a @click="toggleCommentModal(post)">comments {{ post.comments }}</a></li>
-              <li><a @click="likePost(post.id, post.likes)">likes {{ post.likes }}</a></li>
-              <li><a @click="viewPost(post)">view full post</a></li>
+              <li><a @click="toggleCommentModal(post)">komentar {{ post.comments }}</a></li>
+              <li><a @click="likePost(post.id, post.likes)">Suka {{ post.likes }}</a></li>
+              <li><a @click="viewPost(post)">Lihat Komentar...</a></li>
             </ul>
           </div>
         </div>
         <div v-else>
-          <p class="no-results">There are currently no posts</p>
+          <p class="no-results">Belum ada pelaporan atau aspirasi yang disampaikan</p>
         </div>
       </div>
     </section>
@@ -40,14 +40,14 @@
     <transition name="fade">
       <div v-if="showPostModal" class="p-modal">
         <div class="p-container">
-          <a @click="closePostModal()" class="close">close</a>
+          <a @click="closePostModal()" class="close">Tutup</a>
           <div class="post">
             <h5>{{ fullPost.userName }}</h5>
             <span>{{ fullPost.createdOn | formatDate }}</span>
             <p>{{ fullPost.content }}</p>
             <ul>
-              <li><a>comments {{ fullPost.comments }}</a></li>
-              <li><a>likes {{ fullPost.likes }}</a></li>
+              <li><a>Komentar {{ fullPost.comments }}</a></li>
+              <li><a>Suka {{ fullPost.likes }}</a></li>
             </ul>
           </div>
           <div v-show="postComments.length" class="comments">
