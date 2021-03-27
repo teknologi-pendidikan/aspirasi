@@ -17,11 +17,13 @@
             <label for="password1">Password</label>
             <input v-model.trim="loginForm.password" type="password" placeholder="******" id="password1" />
           </div>
+          <div>
           <button @click="login()" class="button">Log In</button>
+          <a @click="loginAnomymous()">Login Sebagai Tamu</a>
+          </div>
           <div class="extras">
             <a @click="togglePasswordReset()">Lupa Kata Sandi</a>
             <a @click="toggleForm()">Buat Akun</a>
-            <a @click="loginAnomymous()">Login Anonimus</a>
           </div>
         </form>
         <form v-else @submit.prevent>
